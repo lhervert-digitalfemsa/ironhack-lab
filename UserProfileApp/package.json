@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "react": "18.3.1",
-    "react-native": "0.76.3"
+    "react-native": "0.76.3",
+    "@react-native-async-storage/async-storage": "^2.1.0",
+    "@tanstack/react-query": "^5.62.0",
+    "axios": "^1.7.8",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
