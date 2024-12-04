@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios';
+import Keychain from 'react-native-keychain';
 import { getToken } from '../utils/storage';
 
 type CustomHeaders = {
@@ -11,8 +12,8 @@ const api: AxiosInstance = axios.create({
 
 api.interceptors.request.use(
   async config => {
-    const token = await getToken('user');
-
+    const credentials = await Keychain.getGenericPassword();
+    const token = await getToken(credentials && credentials?.username || '');
     config.headers = {
       ...config.headers,
       'x-token': token,

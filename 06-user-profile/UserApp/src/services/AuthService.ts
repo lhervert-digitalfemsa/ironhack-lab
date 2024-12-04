@@ -39,8 +39,6 @@ export const logout = async () => {
     const { data } = await api.get<ResponseT>('/auth/logout');
 
     const { ok } = data;
-    console.log(data);
-    console.log(ok);
     if (!ok) {
       throw new Error('Logout failed');
     }
